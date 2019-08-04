@@ -7,6 +7,9 @@
     "mongodb": "^3.3.0-beta2"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-react": "^7.14.3",
     "nodemon": "^1.19.1"
   }
 }
