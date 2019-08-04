@@ -23,6 +23,7 @@ class restApiRouter {
   }
   getRouter () {
     return this.router;
+    
   }
   createAllListeners () {
     this.createGetListeners();
