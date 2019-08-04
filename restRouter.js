@@ -4,10 +4,10 @@ const urlencodedParser = bodyParser.urlencoded({extended: false});
 const MongoClient = require("mongodb").MongoClient;
 const md5 = require("./md5.js");
 class restApiRouter {
-  constructor (url,db,collection,setKeys,updateKeys,dbreqParams) {
+  constructor (url,db,collection,setKey,updateKeys,dbreqParams) {
     //заменить сетКейс и апдейтКейс на массивы доступных ключей для создания и обновления
     this.router = express.Router();
-    this.setKeys = setKeys;
+    this.setKey = setKey;
     this.updateKeys = updateKeys;
     this.dbreqParams = dbreqParams;
     const mongoClient = new MongoClient (url, {useNewUrlParser : true});
@@ -43,13 +43,16 @@ class restApiRouter {
       const id = req.params.id;
       console.log(`Id ${id}`);
       const filter = new Object();
-      filter[this.setKeys] = id;
+      filter[this.setKey] = id;
       this.collection.findOne(filter,this.dbreqParams,(err, data)=>{
         res.send(data);
       });
     });
   }
   createPostListeners () {
+    const index = {};
+    index[this.setKey] = 1;
+    this.collection.createIndex(index,{"unique":true});
     this.router.post("/",urlencodedParser,(req,res)=>{
       if (!req.body) return res.sendStatus(400);
       console.log(req.body);
@@ -76,7 +79,7 @@ class restApiRouter {
       const id = req.params.id;
       console.log(`Delete ${id}`);
       const filter = new Object();
-      filter[this.setKeys] = id;
+      filter[this.setKey] = id;
       this.collection.deleteOne(filter, (err, results)=>{
         //console.log(data);
         res.send(results.result.ok.toString());

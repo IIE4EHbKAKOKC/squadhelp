@@ -6,4 +6,6 @@ const userRouter = new restApiRouter('mongodb://localhost:27017/','maindb','user
 
 app.use('/rest/users', userRouter);
 
+console.log(22);
+
 app.listen(3000);
