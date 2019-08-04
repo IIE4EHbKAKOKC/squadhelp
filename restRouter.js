@@ -69,9 +69,12 @@ class restApiRouter {
     });
   }
   createPutListeners () {
-    this.router.put("/:id",(req,res)=>{
-      const id = req.params.id;
-      res.send(`Updating ${id}`);
+    this.router.put("/:id/:valueName/:value",(req,res)=>{
+      const uniqueId = req.params.id;
+      const valueName = req.params.valueName;
+      const value = req.params.value;
+      if (this.updateKeys.indexOf(valueName)>-1)
+        res.send(`Updating id=${uniqueId} set(${valueName})=${value}`);
     });
   }
   createDeleteListeners () {
