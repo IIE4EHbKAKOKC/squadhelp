@@ -1,0 +1,274 @@
+ORIGINAL
+https://www.squadhelp.com/ 
+
+HOMEPAGE
+User should be able to Log In
+User should be able to access Contest Dashboard
+User should be able to access Creative Dashboard
+User should be able to access Sign up/Create account
+User should be able to access Launch Contest page
+User should be able to launch a Name Contest
+User should be able to launch a Tagline Contest
+User should be able to launch a Logo Contest
+User should be able to access Name Browsing
+
+
+LOGIN PAGE
+User should be able to enter their Email Address
+User should be able to enter their password
+
+
+SIGN UP/CREATE ACCOUNT
+User should be able to select whether they would like to sign up as a Customer or
+Creative
+User should be able to sign up for both a Customer Account & a Creative Account
+User must sign up separately for a Customer Account & a Creative Account
+User must have two different email addresses associated with their Customer Account
+& Creative Account
+
+
+FOR CUSTOMERS
+Customer should be able to input their full name (Required)
+Customer should be able to input their email address (Required)
+Customer should see an error/notification if the email they entered is already in use
+Customer should be able to create a password (Required)
+Customer should be able to re-enter password for confirmation (Required)
+Customer should see an error/notification if the passwords they entered do not match
+Customer should be able to select Terms of Service link to view/read Terms of Service
+Customer should be able to select that they have read and agreed to Terms of service
+(Required)
+If customer selects next without having entered all required fields, error/notification will
+appear under each field that isn’t filled or selected
+Customer will not be able to move onto the next step without all required fields filled out
+(Full Name, Email Address, Password, Password Confirmation, Agree to Terms of
+Service)
+
+
+FOR CREATIVES
+Creative should be able to input their full name (Required)
+Creative should be able to input their email address (Required)
+Creative should see an error/notification if the email they entered is already in use
+Creative should be able to create a password (Required)
+Creative should be able to re-enter password for confirmation (Required)
+Creative should see an error/notification if the passwords they entered do not match
+Creative should be able to select Terms of Service link to view/read Terms of Service
+Creative should be able to select Non-Disclosure Agreement link to view/read
+Non-Disclosure Agreement
+Creative should be able to select that they have read and agreed to Terms of service &
+Non-Disclosure Agreement (Required)
+If creative selects next without having entered all required fields, error/notification will
+appear under each field that isn’t filled or selected
+Customer will not be able to move onto the next step without all required fields filled out
+(Full Name, Email Address, Password, Password Confirmation, Agree to Terms of
+Service & Non-Disclosure Agreement)
+
+
+LAUNCH CONTEST PAGE
+User should be able to access log in screen
+User should be able to access sign up/ create account screen
+User should be able to choose a contest type
+● User should be able to select name contest
+● User should be able to select tagline contest
+● User should be able to select logo contest
+User should be able to select multiple contest types and save money with bundle pricing
+● Name + Tagline + Logo
+● Name +Tagline
+● Name + Logo
+● Tagline + Logo
+If user selects multiple contest types, user will have to complete the contest one at at
+time as some contest are dependant on others (i.e. logo contest will be dependant on
+name & tagline contest winners)
+
+Contest type order if multiple are selected:
+1. Name
+2. Tagline
+3. Logo
+
+
+
+NAME CONTEST
+Customer should be able to input required information
+Customer should be able to input the title of their contest (Required)
+Customer should be able to select the type of name they are looking for (Required)
+● Company
+● Product
+● Project
+Customer should be able to select the industry associated with their venture (Required)
+Customer should be able to input what their venture does (Required)
+Customer should be able to describe their target customer (Required)
+Customer should be able to select their preference(s) for name style (Optional)
+● Classic
+● Fun
+● Professional
+● Descriptive
+● Youthful
+● Any
+Customer should be able to upload files (Optional)
+If customer selects next without having entered all required fields, error/notification will
+appear under each field that isn’t filled or selected
+Customer will not be able to move onto the next step without all required fields filled out
+User should be able to checkout if all contest briefs have been completed
+
+
+TAGLINE CONTEST
+Customer should be able to input required information
+Customer should be able to input the title of their contest (Required)
+Customer should be able to select the industry associated with their venture (Required)
+Customer should be able to input their name of their venture (Required)
+Customer should be able to input what their venture does (Required)
+Customer should be able to describe their target customer (Required)
+Customer should be able to select their preference for tagline type (Required)
+● Classic
+● Fun
+● Powerful
+● Descriptive
+● Modern
+● Any
+Customer should be able to upload files (Optional)
+If customer selects next without having entered all required fields, error/notification will
+appear under each field that isn’t filled or selected
+Customer will not be able to move onto the next step without all required fields filled out
+User should be able to checkout if all contest briefs have been completed
+
+
+LOGO CONTEST
+Customer should be able to input required information
+Customer should be able to input the title of their contest (Required)
+Customer should be able to select the industry associated with their venture (Required)
+Customer should be able to input their name of their venture (Required)
+Customer should be able to input what their venture does (Required)
+Customer should be able to describe their target customer
+Customer should be able to select which visual style best represents their brand
+(Required)
+● Techy
+● Fun
+● Fancy
+● Minimal
+● Brick & Mortar
+● Photo-based
+Customer should be able to upload files (Optional)
+If customer selects next without having entered all required fields, error/notification will
+appear under each field that isn’t filled or selected
+Customer will not be able to move onto the next step without all required fields filled out
+User should be able to checkout if all contest briefs have been completed
+
+
+CHECKOUT
+User should be able to input payment information
+● Card number
+● Expiration
+● Security code
+User should be able to create account
+User should be able to login if they already have an account
+User should be able to select submit payment
+Now that contest is live, user should start receiving submissions shortly
+
+
+
+CUSTOMER DASHBOARD
+● Active Contests
+    ○ Entries
+    ○ Brief
+● Ended contests
+● Profile/Settings
+
+
+ACTIVE CONTESTS
+User should be able to start a new contest
+User should be able to view Active Contests
+User should be able to view a snapshot of their active contest(s)
+● Contest ID
+● Contest Name
+● Contest Type
+● Contest Description
+● Prize money
+● Total Entries
+● Days Left in contest
+User should be able to view expanded contest dashboard
+User should be able to view the name of their contest
+User should be able to view the type of contest
+User should be able to view the guaranteed prize for their contest winner
+User should be able to see total entries
+
+
+ENTRIES
+User should be able to view all individual entries
+User should be able to mark an entry as rejected
+User should be able to select an entry as the winner of the contest
+● User should have to confirm
+
+
+BRIEF
+User should be able to view their contest brief
+User should be able to change contest
+
+
+ENDED CONTESTS
+User should be able to view Ended Contests
+User should be able to view a snapshot of their ended contest(s)
+● Contest ID
+● Winning Entry
+    ○ Creative
+    ○ Submitted date
+    ○ Prize awarded date
+● Prize Money awarded
+● Total Entries
+● Days Left in contest
+User should be able to view expanded contest dashboard (Just like active contest only
+with no new entries coming in, ability to pick a winner, etc)
+
+
+
+
+CREATIVE DASHBOARD
+● Active Contests
+● My Entries
+Profile
+Balance
+
+ACTIVE CONTESTS
+Creative should be able to view all contests that are currently active on the platform
+Creative should be able to filter active contests
+● By contest type
+    ○ Name
+    ○ Logo
+    ○ Tagline
+● By contest ID
+● By Industry
+● By award amount
+Creative should be able to see each individual contest details
+● Contest ID
+● Contest Name
+● Contest Type
+● Contest Description
+● Contest Prize
+● Number of total entries
+User should be able to view expanded contest view
+
+Expanded Active Contest View
+Creative should be able to view contest details
+● Prize money
+● Number of Total Entries
+Creative should be able to favorite contest
+Creative should be able to view full contest brief
+Creative should be able to view any documents uploaded to the brief
+Creative should be able to submit an entry to a contest
+● Logo
+○ Upload a file
+● Tagline
+○ Enter tagline into text box
+● Name
+○ Enter name into text box
+
+MY ENTRIES
+Creative should be able to view his entties and contest
+
+BALANCE
+Creative should be able to cash out
+
+
+
+
+
+
+
