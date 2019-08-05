@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-inner-declarations */
 function md5cycle(x, k) {
 var a = x[0], b = x[1], c = x[2], d = x[3];
 
@@ -155,10 +158,10 @@ return (a + b) & 0xFFFFFFFF;
 }
 
 if (md5('hello') != '5d41402abc4b2a76b9719d911017c592') {
-function add32(x, y) {
-var lsw = (x & 0xFFFF) + (y & 0xFFFF),
-msw = (x >> 16) + (y >> 16) + (lsw >> 16);
-return (msw << 16) | (lsw & 0xFFFF);
-}
+    function add32(x, y) {
+    var lsw = (x & 0xFFFF) + (y & 0xFFFF),
+    msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+    return (msw << 16) | (lsw & 0xFFFF);
+    }
 }
 module.exports = md5;
