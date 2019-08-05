@@ -41,11 +41,16 @@ class restApiRouter {
 
     this.router.get("/:id",(req,res)=>{
       const id = req.params.id;
-      console.log(`Id ${id}`);
       const filter = new Object();
       filter[this.setKey] = id;
       this.collection.findOne(filter,this.dbreqParams,(err, data)=>{
-        res.send(data);
+        if (err) {
+          console.log(err);
+          res.statusCode = 500;
+          res.send('Server error');
+          return;
+        }
+        res.send(JSON.stringify(data));
       });
     });
   }
@@ -59,7 +64,7 @@ class restApiRouter {
       console.log("Adding one");
       const user = {};
       user.login = "login";
-      user.password = md5("password");
+      user.password = "password";
       this.collection.insertOne(user,(err, results)=>{
         if (err) return console.log(err);
 
