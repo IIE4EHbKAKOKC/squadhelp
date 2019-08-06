@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require("body-parser");
-const urlencodedParser = bodyParser.urlencoded({extended: false});
+const jsonParser = bodyParser.json();
 const MongoClient = require("mongodb").MongoClient;
+// eslint-disable-next-line no-unused-vars
 const md5 = require("./md5.js");
 class restApiRouter {
   constructor (url,db,collection,setKey,updateKeys,dbreqParams) {
@@ -34,7 +35,12 @@ class restApiRouter {
     this.router.get("/",(req,res)=>{
       console.log("Get all");
       this.collection.find({},this.dbreqParams).toArray((err, data)=>{
-        if (err) return console.log(err);
+        if (err) {
+          console.log(err);
+          res.statusCode = 500;
+          res.send('Server error');
+          return;
+        }
         res.send(data);
       });
     });
@@ -58,17 +64,17 @@ class restApiRouter {
     const index = {};
     index[this.setKey] = 1;
     this.collection.createIndex(index,{"unique":true});
-    this.router.post("/",urlencodedParser,(req,res)=>{
+    this.router.post("/",jsonParser,(req,res)=>{
       if (!req.body) return res.sendStatus(400);
-      console.log(req.body);
       console.log("Adding one");
-      const user = {};
-      user.login = "login";
-      user.password = "password";
-      this.collection.insertOne(user,(err, results)=>{
-        if (err) return console.log(err);
-
-        console.log(results.result.ok);
+      const data = req.body;
+      this.collection.insertOne(data,(err, results)=>{
+        if (err) {
+          console.log(err);
+          res.statusCode = 500;
+          res.send('Server error');
+          return;
+        }
         res.send(results.result.ok.toString());
       });
     });

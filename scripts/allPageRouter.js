@@ -14,7 +14,7 @@ allPageRouter.get('/login',(req,res)=>{
 });
 
 allPageRouter.post('/login',urlencodedParser,(req,res)=>{
-    var fullUrl = req.protocol + '://' + req.get('host') + '/rest/users/' + req.body.login;
+    const fullUrl = req.protocol + '://' + req.get('host') + '/rest/users/' + req.body.login;
     fetch(fullUrl,{method:'GET'})
         .then((resp)=>{
             return resp.json();
@@ -37,7 +37,56 @@ allPageRouter.get('/signup',(req,res)=>{
 });
 
 allPageRouter.post('/signup',urlencodedParser,(req,res)=>{
-    res.send(req.body);
+    const fullUrl = req.protocol + '://' + req.get('host') + '/rest/users/';
+    const body = req.body;
+    body.login = body.email;
+    fetch(fullUrl, {
+        method:"POST",
+        body:JSON.stringify(body),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(resp => resp.json)
+    .then((myJson)=>{
+        res.send(myJson);
+    });
+});
+
+allPageRouter.get('/start',(req,res)=>pageSender.send(res, 'startcontest.html'));
+
+allPageRouter.post('/start', urlencodedParser, (req,res)=>{
+    const fullUrl = req.protocol + '://' + req.get('host') + '/rest/contests/';
+    const body = req.body;
+    body.id = 22;
+    fetch(fullUrl, {
+        method:"POST",
+        body:JSON.stringify(body),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(resp => resp.json)
+    .then((myJson)=>{
+        res.send(myJson);
+    });
+});
+
+allPageRouter.post('/entry', urlencodedParser, (req,res)=>{
+    const fullUrl = req.protocol + '://' + req.get('host') + '/rest/entries/';
+    const body = req.body;
+    body.id = 22;
+    fetch(fullUrl, {
+        method:"POST",
+        body:JSON.stringify(body),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(resp => resp.json)
+    .then((myJson)=>{
+        res.send(myJson);
+    });
 });
 
 module.exports = allPageRouter;
